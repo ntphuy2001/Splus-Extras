@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.API", "Splus-Extras.API\Splus-Extras.API.csproj", "{51A6C932-6999-4E11-9872-2FB7F777B2F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51A6C932-6999-4E11-9872-2FB7F777B2F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A6C932-6999-4E11-9872-2FB7F777B2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A6C932-6999-4E11-9872-2FB7F777B2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A6C932-6999-4E11-9872-2FB7F777B2F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6910E18-6934-4D29-B481-1805A05D83E4}
+	EndGlobalSection
+EndGlobal
