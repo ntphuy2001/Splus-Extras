@@ -18,11 +18,29 @@ namespace Splus_Extras.Translator
 
         public string TargetLanguage { get => _targetLanguage; }
         public string SourceLanguage { get => _sourceLanguage; }
+        public string TranslateService
+        {
+            get 
+            {
+                switch (_currentService.GetType().Name)
+                {
+                    case "ChatGPT":
+                        return "ChatGPT";
+                    case "DeepL":
+                        return "ChatGPT";
+                    case "GGTranslate":
+                        return "Google Translate";
+                    default:
+                        return "";
+                }
+            }
+        }
+
         public string Token { get => _token; }
 
         public void SetService(string serviceType)
         {
-            _currentService = TranslateServiceStrategyFactory.CreateStrategy(serviceType, _token);
+            _currentService = TranslateServiceStrategyFactory.CreateStrategy(serviceType);
         }
 
         public void SaveSetting(string sourceLanguage, string targetLanguage, string token)

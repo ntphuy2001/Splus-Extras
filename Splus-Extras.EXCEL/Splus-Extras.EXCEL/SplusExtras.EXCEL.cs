@@ -29,24 +29,25 @@ namespace Splus_Extras.EXCEL
             Microsoft.Office.Interop.Excel.Application excelApp = Globals.ThisAddIn.Application;
             Workbook activeWorkbook = excelApp.ActiveWorkbook;
             Worksheet activeSheet = activeWorkbook.ActiveSheet;
-            OfficeContentType.TextBox textBox = new OfficeContentType.TextBox(activeSheet);
-            textBox.TranslateAndReplace();
+
+            Cell sn = new Cell(activeSheet);
+            sn.TranslateAndReplace();
         }
 
-        private void SheetButton_Click(object sender, RibbonControlEventArgs e)
+        private async void SheetButton_Click(object sender, RibbonControlEventArgs e)
         {
             Microsoft.Office.Interop.Excel.Application excelApp = Globals.ThisAddIn.Application;
             Workbook activeWorkbook = excelApp.ActiveWorkbook;
             Worksheet activeSheet = activeWorkbook.ActiveSheet;
 
             Cell cell = new Cell(activeSheet);
-            cell.TranslateAndReplace();
+            await cell.TranslateAndReplace();
 
             OfficeContentType.TextBox textBox = new OfficeContentType.TextBox(activeSheet);
-            textBox.TranslateAndReplace();
+            await textBox.TranslateAndReplace();
 
             SheetName sheetName = new SheetName(activeSheet);
-            sheetName.TranslateAndReplace();
+            await sheetName.TranslateAndReplace();
         }
 
         private void SelectionButton_Click(object sender, RibbonControlEventArgs e)

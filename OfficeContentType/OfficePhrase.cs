@@ -17,6 +17,6 @@ namespace OfficeContentType
             _translator = TranslationServiceSingleton.Instance;
         }
 
-        public abstract void TranslateAndReplace();
+        public abstract Task TranslateAndReplace();
     }
 }

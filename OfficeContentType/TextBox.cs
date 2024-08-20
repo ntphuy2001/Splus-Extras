@@ -16,20 +16,23 @@ namespace Splus_Extras.OfficeContentType
         public TextBox(Worksheet activeSheet)
         {
             _listTextBoxRanges = activeSheet.Shapes.Cast<Microsoft.Office.Interop.Excel.Shape>()
-                //.SelectMany(s => GetShapesRecursively(s))
-                .Select(s => s.TextFrame2.TextRange)
-                .Where(range => !string.IsNullOrWhiteSpace(range.Text))
+                .SelectMany(s => GetGroupItemShapes(s))
+                .Where(s => s.HasText == MsoTriState.msoTrue && !string.IsNullOrWhiteSpace(s.TextRange.Text))
+                .Select(s => s.TextRange)
                 .ToList();
         }
 
-        //private IEnumerable<Microsoft.Office.Interop.Excel.Shape> GetShapesRecursively(Microsoft.Office.Interop.Excel.Shape shape)
-        //{
-        //    if (shape.GroupItems.Count > 0)
-        //    {
-        //        return shape.GroupItems.Cast<Microsoft.Office.Interop.Excel.Shape>().SelectMany(GetShapesRecursively);
-        //    }
-        //    return new[] { shape };
-        //}
+        private IEnumerable<Microsoft.Office.Interop.Excel.TextFrame2> GetGroupItemShapes(Microsoft.Office.Interop.Excel.Shape shape)
+        {
+            if (shape.Type == MsoShapeType.msoGroup || shape.Type == MsoShapeType.msoSmartArt)
+            {
+                return shape.GroupItems.Cast<Microsoft.Office.Interop.Excel.Shape>()
+                .SelectMany(s => GetGroupItemShapes(s) );
+            } else
+            {
+                return  new[] { shape.TextFrame2 };
+            }
+        }
 
         ////public Cell(Worksheet activeSheet, Range range)
         ////{
@@ -37,7 +40,7 @@ namespace Splus_Extras.OfficeContentType
         ////}
 
 
-        public override async void TranslateAndReplace()
+        public override async Task TranslateAndReplace()
         {
             List<string> listTexts = new List<string>();
 
@@ -50,7 +53,7 @@ namespace Splus_Extras.OfficeContentType
 
             for (int i = _listTextBoxRanges.Count - 1; i >= 0; i--)
             {
-                _listTextBoxRanges[i].Text = listTranslatedTexts[i].Replace(" \n ", "\n").Trim('\'');
+                _listTextBoxRanges[i].Text = listTranslatedTexts[i].Replace(" \n ", "\n").Trim('\'', ' ', '`');
             }
         }
     }

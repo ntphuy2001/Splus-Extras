@@ -23,11 +23,11 @@ namespace Splus_Extras.OfficeContentType
         ////}
 
 
-        public override async void TranslateAndReplace()
+        public override async Task TranslateAndReplace()
         {
             List<string> listTexts = new List<string> { _activeSheet.Name };
             List<string> listTranslatedTexts = await _translator.Translate(listTexts);
-            _activeSheet.Name = listTranslatedTexts[0].Trim('\'');
+            _activeSheet.Name = listTranslatedTexts[0].Trim('\'', ' ', '`');
         }
     }
 }

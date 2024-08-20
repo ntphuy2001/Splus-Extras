@@ -24,7 +24,7 @@ namespace Splus_Extras.Translator
         private readonly string _endPoint;
         private readonly TranslationServiceSingleton _translator = TranslationServiceSingleton.Instance;
 
-        public ChatGPT(string token)
+        public ChatGPT()
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             _endPoint = "https://api.openai.com/v1/chat/completions";
@@ -34,22 +34,16 @@ namespace Splus_Extras.Translator
 
         async Task<List<string>> ITranslationService.Translate(List<string> listResources)
         {
-            string prompt = "";
-            for (int i = 0; i < listResources.Count; i++)
-            {
-                if (i == listResources.Count - 1)
-                    prompt += $"'{listResources[i]}'";
-                else
-                    prompt += $"'{listResources[i]}', ";
-            }
+            string prompt = string.Join(" >>--<< ", listResources.ToArray());
+            
             //Basic request body to test the connection
             var requestBody = new
             {
                 model = "gpt-3.5-turbo",
                 messages = new[]
                 {
-                    new { role = "system", content = $"You are a helpful assistant. Translate this paragraphs list bellow, sentence by sentence, in context with the content of the entire given list, from '{_translator.SourceLanguage}' to '{_translator.TargetLanguage}'. The result should be only a string of all translated text in the given list, the results concatenated with the string '>>--<<'." },
-                    new { role = "user", content = $"[{prompt}]" }
+                    new { role = "system", content = $"Translate all to {_translator.TargetLanguage}. The result should be only a string of all translated text in the given list, the results concatenated with the string '>>--<<'." },
+                    new { role = "user", content = $"{prompt}" }
                },
                 //max_tokens = 100,
                 //temperature = 0.5
@@ -67,7 +61,11 @@ namespace Splus_Extras.Translator
 
             string messagResponse = jsonResponse["choices"][0]["message"]["content"].Value<string>();
 
-            return new List<string>(messagResponse.Split(new string[] { ">>--<<" }, StringSplitOptions.None));
+
+            return messagResponse.Split(new string[] { ">>--<<" }, StringSplitOptions.None)
+                    .Where(item => !string.IsNullOrWhiteSpace(item))
+                    .Select(item => item.Trim('\a', '\r', '\'', '[', ']', ' ', '\"'))
+                    .ToList();
         }
     }
 }

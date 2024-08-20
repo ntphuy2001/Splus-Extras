@@ -18,15 +18,45 @@ namespace Splus_Extras.SettingForm
         public SettingForm()
         {
             InitializeComponent();
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
         }
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
             _translationService = TranslationServiceSingleton.Instance;
-            sourceLanguageComboBox.Text = _translationService.SourceLanguage;
-            targetLanguageComboBox.Text = _translationService.TargetLanguage;
+
+            LimitWordTextbox.Text = "1000";
+            SourceLanguageComboBox.SelectedItem = _translationService.SourceLanguage;
+            TargetLanguageComboBox.SelectedItem = _translationService.TargetLanguage;
+            TranslatorComboBox.SelectedItem = _translationService.TranslateService;
+            TokenTextBox.Text = _translationService.Token;
+        }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            string sourceLanguage = this.SourceLanguageComboBox.SelectedItem.ToString();
+            string targetLanguage = this.TargetLanguageComboBox.SelectedItem.ToString();
+            string token = this.TokenTextBox.Text;
+            string translateService = this.TranslatorComboBox.SelectedItem.ToString();
+            _translationService.SaveSetting(sourceLanguage, targetLanguage, token);
+            _translationService.SetService(translateService);
+        }
+
+        private void LimitWordTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits, decimal point, and control characters
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // Allow only one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

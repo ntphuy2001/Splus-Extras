@@ -29,7 +29,7 @@ namespace Splus_Extras.OfficeContentType
         ////}
 
 
-        public override async void TranslateAndReplace()
+        public override async Task TranslateAndReplace()
         {
             List<string> listTexts = new List<string>();
 
@@ -42,7 +42,7 @@ namespace Splus_Extras.OfficeContentType
 
             for (int i = _listCellRanges.Count - 1; i >= 0; i--)
             {
-                _listCellRanges[i].Value = listTranslatedTexts[i].Trim('\'');
+                _listCellRanges[i].Value = listTranslatedTexts[i].Trim('\'', ' ', '`');
             }
         }
     }
