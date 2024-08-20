@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.Translator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeContentType", "..\OfficeContentType\OfficeContentType.csproj", "{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.WORD", "..\Splus-Extras.WORD\Splus-Extras.WORD\Splus-Extras.WORD.csproj", "{AE1E183C-3570-44CA-9BA5-12E55587DD67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1E183C-3570-44CA-9BA5-12E55587DD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1E183C-3570-44CA-9BA5-12E55587DD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1E183C-3570-44CA-9BA5-12E55587DD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1E183C-3570-44CA-9BA5-12E55587DD67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

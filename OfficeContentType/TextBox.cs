@@ -53,7 +53,7 @@ namespace Splus_Extras.OfficeContentType
 
             for (int i = _listTextBoxRanges.Count - 1; i >= 0; i--)
             {
-                _listTextBoxRanges[i].Text = listTranslatedTexts[i].Replace(" \n ", "\n").Trim('\'', ' ', '`');
+                _listTextBoxRanges[i].Text = listTranslatedTexts[i].Replace(" \n ", "\n");
             }
         }
     }

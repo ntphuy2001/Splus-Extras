@@ -42,7 +42,7 @@ namespace Splus_Extras.OfficeContentType
 
             for (int i = _listCellRanges.Count - 1; i >= 0; i--)
             {
-                _listCellRanges[i].Value = listTranslatedTexts[i].Trim('\'', ' ', '`');
+                _listCellRanges[i].Value = listTranslatedTexts[i];
             }
         }
     }
