@@ -1,10 +1,8 @@
 ﻿using Microsoft.Office.Core;
 using Microsoft.Office.Interop.Excel;
 using OfficeContentType;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Splus_Extras.OfficeContentType
@@ -20,6 +18,7 @@ namespace Splus_Extras.OfficeContentType
                 .Where(s => s.HasText == MsoTriState.msoTrue && !string.IsNullOrWhiteSpace(s.TextRange.Text))
                 .Select(s => s.TextRange)
                 .ToList();
+            TextBox._listLength = _listTextBoxRanges.Count;
         }
 
         private IEnumerable<Microsoft.Office.Interop.Excel.TextFrame2> GetGroupItemShapes(Microsoft.Office.Interop.Excel.Shape shape)

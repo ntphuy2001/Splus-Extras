@@ -21,6 +21,7 @@ namespace Splus_Extras.OfficeContentType
             _listCellRanges = usedRange.Cells.Cast<Range>()
                                     .Where(cell => cell.Value != null)
                                     .ToList();
+            Cell._listLength = _listCellRanges.Count;
         }
 
         ////public Cell(Worksheet activeSheet, Range range)

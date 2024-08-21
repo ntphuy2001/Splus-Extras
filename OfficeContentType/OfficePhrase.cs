@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Splus_Extras.Translator;
 
 namespace OfficeContentType
@@ -11,10 +6,20 @@ namespace OfficeContentType
     public abstract class OfficePhrase
     {
         public TranslationServiceSingleton _translator;
+        public static int _listLength;
 
         public OfficePhrase()
         {
             _translator = TranslationServiceSingleton.Instance;
+        }
+
+        public async Task RunTask ()
+        {
+            if (_listLength > 0)
+            {
+                await TranslateAndReplace();
+            }
+            _translator.AddError("Please!!!");
         }
 
         public abstract Task TranslateAndReplace();

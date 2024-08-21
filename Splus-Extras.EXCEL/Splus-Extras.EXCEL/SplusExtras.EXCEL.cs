@@ -1,14 +1,8 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Splus_Extras.SettingForm;
 using Splus_Extras.Translator;
 using Splus_Extras.OfficeContentType;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Splus_Extras.EXCEL
@@ -72,7 +66,7 @@ namespace Splus_Extras.EXCEL
             OfficeContentType.TextBox textBox = new OfficeContentType.TextBox(selectedSheet);
             SheetName sheetName = new SheetName(selectedSheet);
 
-            await Task.WhenAll(cell.TranslateAndReplace(), textBox.TranslateAndReplace(), sheetName.TranslateAndReplace());
+            await Task.WhenAll(cell.RunTask(), textBox.RunTask(), sheetName.RunTask());
         }
     }
 }
