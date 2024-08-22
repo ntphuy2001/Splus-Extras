@@ -15,9 +15,11 @@ namespace Splus_Extras.Translator
         private string _sourceLanguage;
         private string _targetLanguage;
         private string _token;
+        private List<string> _errors = new List<string>();
 
         public string TargetLanguage { get => _targetLanguage; }
         public string SourceLanguage { get => _sourceLanguage; }
+        public List<string> Errors { get => _errors; }
         public string TranslateService
         {
             get 
@@ -37,6 +39,15 @@ namespace Splus_Extras.Translator
         }
 
         public string Token { get => _token; }
+
+        public void ResetError()
+        {
+            _errors = new List<string>();
+        }
+        public void AddError(string mess)
+        {
+            _errors.Add(mess);
+        }
 
         public void SetService(string serviceType)
         {

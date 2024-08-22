@@ -1,14 +1,8 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Splus_Extras.SettingForm;
 using Splus_Extras.Translator;
-using Splus_Extras.OfficeContentType;
+using Splus_Extras.OfficeContentType.Excel;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Splus_Extras.EXCEL
@@ -68,11 +62,11 @@ namespace Splus_Extras.EXCEL
 
         private async Task TranslateSheet(Worksheet selectedSheet)
         {
-            Cell cell = new Cell(selectedSheet);
-            OfficeContentType.TextBox textBox = new OfficeContentType.TextBox(selectedSheet);
-            SheetName sheetName = new SheetName(selectedSheet);
+            OfficeContentType.Excel.Cell cell = new OfficeContentType.Excel.Cell(selectedSheet);
+            OfficeContentType.Excel.TextBox textBox = new OfficeContentType.Excel.TextBox(selectedSheet);
+            OfficeContentType.Excel.SheetName sheetName = new OfficeContentType.Excel.SheetName(selectedSheet);
 
-            await Task.WhenAll(cell.TranslateAndReplace(), textBox.TranslateAndReplace(), sheetName.TranslateAndReplace());
+            await Task.WhenAll(cell.RunTask(), textBox.RunTask(), sheetName.RunTask());
         }
     }
 }
