@@ -8,7 +8,7 @@ namespace Splus_Extras.OfficeContentType.Excel
 {
     public class Cell: OfficePhrase
     {
-        private readonly List<Range> _listCellRanges;
+        private readonly List<Range> _listCellRanges = new List<Range>();
 
         public Cell(Worksheet activeSheet)
         {

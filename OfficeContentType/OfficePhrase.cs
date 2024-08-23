@@ -6,7 +6,7 @@ namespace Splus_Extras.OfficeContentType
     public abstract class OfficePhrase
     {
         protected TranslationServiceSingleton _translator;
-        public static int _listLength;
+        public static int _listLength = 0;
 
         public OfficePhrase()
         {
@@ -15,6 +15,7 @@ namespace Splus_Extras.OfficeContentType
 
         public async Task RunTask ()
         {
+            _translator.ResetError();
             if (_listLength > 0)
             {
                 await TranslateAndReplace();
