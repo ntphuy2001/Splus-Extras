@@ -11,10 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.Translator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.OfficeContentType", "..\OfficeContentType\Splus-Extras.OfficeContentType.csproj", "{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.WORD", "..\Splus-Extras.WORD\Splus-Extras.WORD\Splus-Extras.WORD.csproj", "{AE1E183C-3570-44CA-9BA5-12E55587DD67}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.PPT", "..\Splus-Extras.PPTX\Splus-Extras.PPT\Splus-Extras.PPT.csproj", "{2C2D87FC-EB71-4BFC-AB29-5799A8A9C154}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
