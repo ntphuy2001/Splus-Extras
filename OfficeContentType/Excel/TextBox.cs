@@ -8,7 +8,7 @@ namespace Splus_Extras.OfficeContentType.Excel
 {
     public class TextBox: OfficePhrase
     {
-        private readonly List<TextRange2> _listTextBoxRanges;
+        private readonly List<TextRange2> _listTextBoxRanges = new List<TextRange2>();
 
         public TextBox(Worksheet activeSheet)
         {
