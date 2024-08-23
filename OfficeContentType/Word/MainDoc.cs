@@ -14,6 +14,8 @@ namespace Splus_Extras.OfficeContentType.Word
                 .Select(p => p.Range)
                 .Where(t => !string.IsNullOrWhiteSpace(t.Text.Trim('\a', '\r')))
                 .ToList();
+
+            MainDoc._listLength = _mainTexts.Count;
         }
 
         public override async System.Threading.Tasks.Task TranslateAndReplace()

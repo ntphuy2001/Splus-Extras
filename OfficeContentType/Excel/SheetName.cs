@@ -1,9 +1,8 @@
 ﻿using Microsoft.Office.Interop.Excel;
-using OfficeContentType;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Splus_Extras.OfficeContentType
+namespace Splus_Extras.OfficeContentType.Excel
 {
     public class SheetName: OfficePhrase
     {

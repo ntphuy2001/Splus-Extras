@@ -20,6 +20,8 @@ namespace Splus_Extras.OfficeContentType.Word
                                     .Where(shape => shape.HasText != MsoTriState.msoFalse)
                                     .Select(shape => shape.TextRange)
                                     .ToList();
+
+            SmartArt._listLength = _listSmartArtRanges.Count;
         }
 
         private IEnumerable<TextFrame2> GetAllSmartArtShape(Microsoft.Office.Interop.Word.InlineShape inlineShape)

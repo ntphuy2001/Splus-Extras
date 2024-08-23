@@ -5,9 +5,8 @@ namespace Splus_Extras.OfficeContentType
 {
     public abstract class OfficePhrase
     {
-        public TranslationServiceSingleton _translator;
-        public static int _listLength;
         protected TranslationServiceSingleton _translator;
+        public static int _listLength;
 
         public OfficePhrase()
         {

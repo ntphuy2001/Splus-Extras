@@ -6,6 +6,9 @@ using System.Text;
 using Splus_Extras.Translator;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
+using System.Runtime.Remoting.Messaging;
+using Splus_Extras.OfficeContentType.Word;
+using Microsoft.Office.Core;
 
 namespace Splus_Extras.WORD
 {
@@ -30,15 +33,19 @@ namespace Splus_Extras.WORD
 
         private async void DocButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Microsoft.Office.Interop.Word.Application wordlApp = Globals.ThisAddIn.Application;
-            Document activeDoc = wordlApp.ActiveDocument;
+            Document activeDoc = Globals.ThisAddIn.Application.ActiveDocument;
 
-            Splus_Extras.OfficeContentType.Word.MainDoc md = new Splus_Extras.OfficeContentType.Word.MainDoc(activeDoc);
-            Splus_Extras.OfficeContentType.Word.TextBox tb = new Splus_Extras.OfficeContentType.Word.TextBox(activeDoc);
-            Splus_Extras.OfficeContentType.Word.SmartArt sa = new Splus_Extras.OfficeContentType.Word.SmartArt(activeDoc);
-            await md.TranslateAndReplace();
-            await tb.TranslateAndReplace();
-            await sa.TranslateAndReplace();
+            await TranslateDocument(activeDoc);
+        }
+
+        private async System.Threading.Tasks.Task TranslateDocument(Document activeDoc)
+        {
+            OfficeContentType.Word.MainDoc mainDoc = new OfficeContentType.Word.MainDoc(activeDoc);
+            OfficeContentType.Word.TextBox textBox = new OfficeContentType.Word.TextBox(activeDoc);
+            OfficeContentType.Word.SmartArt smartArt = new OfficeContentType.Word.SmartArt(activeDoc);
+            OfficeContentType.Word.Table table = new OfficeContentType.Word.Table(activeDoc);
+
+            await System.Threading.Tasks.Task.WhenAll(mainDoc.RunTask(), textBox.RunTask(), smartArt.RunTask(), table.RunTask());
         }
     }
 }

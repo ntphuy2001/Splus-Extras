@@ -61,7 +61,7 @@
             this.TranslatorGroup.Items.Add(this.translatorBox);
             this.TranslatorGroup.Items.Add(this.BoxSeparator);
             this.TranslatorGroup.Items.Add(this.settingBox);
-            this.TranslatorGroup.Label = "Translato";
+            this.TranslatorGroup.Label = "Translator";
             this.TranslatorGroup.Name = "TranslatorGroup";
             // 
             // translatorBox

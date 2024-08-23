@@ -15,6 +15,8 @@ namespace Splus_Extras.OfficeContentType.Word
             _listTextBoxRanges = activeDoc.Shapes.Cast<Microsoft.Office.Interop.Word.Shape>()
                                     .SelectMany(shape => GetAllShape(shape))
                                     .ToList();
+
+            TextBox._listLength = _listTextBoxRanges.Count;
         }
 
         private IEnumerable<Range> GetAllShape(Microsoft.Office.Interop.Word.Shape shape)
@@ -24,7 +26,7 @@ namespace Splus_Extras.OfficeContentType.Word
                 return shape.GroupItems.Cast<Microsoft.Office.Interop.Word.Shape>()
                     .Select(s => s.TextFrame.TextRange);
             }
-            else if (shape.TextFrame.HasText != 0)
+            else if (shape.TextFrame.HasText != 0 || shape.Type == Microsoft.Office.Core.MsoShapeType.msoTextEffect)
             {
                 return new[] { shape.TextFrame.TextRange };
             }

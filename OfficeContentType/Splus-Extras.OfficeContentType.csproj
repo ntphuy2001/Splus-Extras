@@ -45,6 +45,7 @@
     <Compile Include="Excel\SheetName.cs" />
     <Compile Include="Excel\TextBox.cs" />
     <Compile Include="Word\SmartArt.cs" />
+    <Compile Include="Word\Table.cs" />
     <Compile Include="Word\TextBox.cs" />
   </ItemGroup>
   <ItemGroup>
