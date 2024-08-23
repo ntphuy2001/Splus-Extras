@@ -39,10 +39,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell.cs" />
+    <Compile Include="Excel\Cell.cs" />
+    <Compile Include="Word\MainDoc.cs" />
     <Compile Include="OfficePhrase.cs" />
-    <Compile Include="SheetName.cs" />
-    <Compile Include="TextBox.cs" />
+    <Compile Include="Excel\SheetName.cs" />
+    <Compile Include="Excel\TextBox.cs" />
+    <Compile Include="Word\SmartArt.cs" />
+    <Compile Include="Word\Table.cs" />
+    <Compile Include="Word\TextBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Splus-Extras.Translator\Splus-Extras.Translator\Splus-Extras.Translator.csproj">
@@ -68,6 +72,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PPT\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

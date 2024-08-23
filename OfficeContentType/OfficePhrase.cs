@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Splus_Extras.Translator;
 
-namespace OfficeContentType
+namespace Splus_Extras.OfficeContentType
 {
     public abstract class OfficePhrase
     {
-        public TranslationServiceSingleton _translator;
+        protected TranslationServiceSingleton _translator;
         public static int _listLength;
 
         public OfficePhrase()

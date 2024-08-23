@@ -274,9 +274,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\OfficeContentType\OfficeContentType.csproj">
+    <ProjectReference Include="..\..\OfficeContentType\Splus-Extras.OfficeContentType.csproj">
       <Project>{936e5c5a-7fb7-4dac-a422-a9bcfcabf12f}</Project>
-      <Name>OfficeContentType</Name>
+      <Name>Splus-Extras.OfficeContentType</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Splus-Extras.SettingForm\Splus-Extras.SettingForm\Splus-Extras.SettingForm.csproj">
       <Project>{1c3771ef-68d6-4b94-9d54-4cf672e6030c}</Project>

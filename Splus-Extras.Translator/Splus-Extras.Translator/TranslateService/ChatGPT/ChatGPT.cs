@@ -64,7 +64,7 @@ namespace Splus_Extras.Translator
 
             return messagResponse.Split(new string[] { ">>--<<" }, StringSplitOptions.None)
                     .Where(item => !string.IsNullOrWhiteSpace(item))
-                    .Select(item => item.Trim('\a', '\r', '\'', '[', ']', ' ', '\"'))
+                    .Select(item => item.Trim('\a', '\r', '\'', '[', ']', ' ', '\"').Replace(" \n ", "\n"))
                     .ToList();
         }
     }
