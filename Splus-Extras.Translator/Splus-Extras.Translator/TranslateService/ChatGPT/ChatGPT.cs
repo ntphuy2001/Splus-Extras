@@ -14,6 +14,7 @@ using Microsoft.CSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 
 
 namespace Splus_Extras.Translator
@@ -42,7 +43,7 @@ namespace Splus_Extras.Translator
                 model = "gpt-3.5-turbo",
                 messages = new[]
                 {
-                    new { role = "system", content = $"Translate all to {_translator.TargetLanguage}. The result should be only a string of all translated text in the given list, the results concatenated with the string '>>--<<'." },
+                    new { role = "system", content = $"Translate all elements separated by '>>--<<' to {_translator.TargetLanguage}. The result should be only a string of all translated texts and each separated by the string '>>--<<'." },
                     new { role = "user", content = $"{prompt}" }
                },
                 //max_tokens = 100,
@@ -64,7 +65,11 @@ namespace Splus_Extras.Translator
 
             return messagResponse.Split(new string[] { ">>--<<" }, StringSplitOptions.None)
                     .Where(item => !string.IsNullOrWhiteSpace(item))
-                    .Select(item => item.Trim('\a', '\r', '\'', '[', ']', ' ', '\"').Replace(" \n ", "\n"))
+                    .Select(item => item.Trim('\a', '\r', '\'', '[', ']', ' ', '\"')
+                                        .Replace(" \r ", "\r")
+                                        .Replace(" \a ", "\a")
+                                        .Replace(" \v ", "\v")
+                                        .Replace(" \n ", "\n"))
                     .ToList();
         }
     }

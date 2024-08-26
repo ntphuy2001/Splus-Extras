@@ -22,9 +22,7 @@ namespace Splus_Extras.OfficeContentType.Excel
 
         ////public Cell(Worksheet activeSheet, Range range)
         ////{
-
         ////}
-
 
         public override async Task TranslateAndReplace()
         {

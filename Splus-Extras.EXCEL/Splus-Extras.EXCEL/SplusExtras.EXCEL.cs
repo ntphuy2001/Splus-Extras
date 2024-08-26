@@ -1,6 +1,5 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
 using Splus_Extras.Translator;
-using Splus_Extras.OfficeContentType.Excel;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.Threading.Tasks;

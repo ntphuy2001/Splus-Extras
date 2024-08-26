@@ -5,11 +5,15 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.EXCEL", "Splus-Extras.EXCEL\Splus-Extras.EXCEL.csproj", "{E0AC4C42-6776-4C06-9231-B53890771980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.SettingForm", "..\Splus-Extras.SettingForm\Splus-Extras.SettingForm\Splus-Extras.SettingForm.csproj", "{1C3771EF-68D6-4B94-9D54-4CF672E6030C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.OfficeContentType", "..\Splus-Extras.OfficeContentType\Splus-Extras.OfficeContentType.csproj", "{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.Translator", "..\Splus-Extras.Translator\Splus-Extras.Translator\Splus-Extras.Translator.csproj", "{B903218D-88A6-4244-BBD1-326B3FA255A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.OfficeContentType", "..\OfficeContentType\Splus-Extras.OfficeContentType.csproj", "{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.SettingForm", "..\Splus-Extras.SettingForm\Splus-Extras.SettingForm\Splus-Extras.SettingForm.csproj", "{1C3771EF-68D6-4B94-9D54-4CF672E6030C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.WORD", "..\Splus-Extras.WORD\Splus-Extras.WORD\Splus-Extras.WORD.csproj", "{AE1E183C-3570-44CA-9BA5-12E55587DD67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Splus-Extras.PPT", "..\Splus-Extras.PPTX\Splus-Extras.PPT\Splus-Extras.PPT.csproj", "{2C2D87FC-EB71-4BFC-AB29-5799A8A9C154}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +25,18 @@ Global
 		{E0AC4C42-6776-4C06-9231-B53890771980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0AC4C42-6776-4C06-9231-B53890771980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0AC4C42-6776-4C06-9231-B53890771980}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{936E5C5A-7FB7-4DAC-A422-A9BCFCABF12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B903218D-88A6-4244-BBD1-326B3FA255A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3771EF-68D6-4B94-9D54-4CF672E6030C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE1E183C-3570-44CA-9BA5-12E55587DD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE1E183C-3570-44CA-9BA5-12E55587DD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE1E183C-3570-44CA-9BA5-12E55587DD67}.Release|Any CPU.ActiveCfg = Release|Any CPU

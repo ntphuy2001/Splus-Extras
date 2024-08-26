@@ -227,7 +227,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\OfficeContentType\Splus-Extras.OfficeContentType.csproj">
+    <ProjectReference Include="..\..\Splus-Extras.OfficeContentType\Splus-Extras.OfficeContentType.csproj">
       <Project>{936e5c5a-7fb7-4dac-a422-a9bcfcabf12f}</Project>
       <Name>Splus-Extras.OfficeContentType</Name>
     </ProjectReference>
